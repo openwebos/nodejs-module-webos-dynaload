@@ -34,9 +34,9 @@ static void SetFileAndDirectoryGlobals(Local<Object> global, const char* path)
 {
 	bf::path pathToFile(bf::system_complete(bf::path(path)));
 	bf::path pathToParentDir(pathToFile.parent_path());
-	Handle<String> fileName = v8::String::New(pathToFile.file_string().c_str());
+	Handle<String> fileName = v8::String::New(pathToFile.string().c_str());
 	global->Set(String::NewSymbol(kFileNameGlobal), fileName);
-	Handle<String> dirName = v8::String::New(pathToParentDir.file_string().c_str());
+	Handle<String> dirName = v8::String::New(pathToParentDir.string().c_str());
 	global->Set(String::NewSymbol(kDirNameGlobal), dirName);
 }
 

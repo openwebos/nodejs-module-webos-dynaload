@@ -44,7 +44,7 @@ webos_add_compiler_flags(ALL -g -Wall -Wno-error=strict-aliasing)
 # webos_add_linker_options(ALL --no-undefined)
 
 add_executable(${CMAKE_PROJECT_NAME}.node src/node_webos.cpp src/external_string.cpp)
-target_link_libraries(${CMAKE_PROJECT_NAME}.node ${NODEJS_LDFLAGS} ${Boost_LDFLAGS})
+target_link_libraries(${CMAKE_PROJECT_NAME}.node ${NODEJS_LDFLAGS} ${Boost_LIBRARIES})
 
 webos_build_nodejs_module()
 

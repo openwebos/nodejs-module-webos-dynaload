@@ -180,7 +180,6 @@ static Handle<Value> RequireWrapper(const Arguments& arguments)
 }
 
 
-extern "C" void
 init(Handle<Object> target)
 {
     HandleScope scope;
@@ -189,3 +188,5 @@ init(Handle<Object> target)
     Local<FunctionTemplate> requireTemplate = FunctionTemplate::New(RequireWrapper);
     target->Set(String::NewSymbol("require"), requireTemplate->GetFunction());
 }
+
+NODE_MODULE(webos, init)

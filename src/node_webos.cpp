@@ -180,7 +180,7 @@ static Handle<Value> RequireWrapper(const Arguments& arguments)
 }
 
 
-init(Handle<Object> target)
+void init(Handle<Object> target)
 {
     HandleScope scope;
     Local<FunctionTemplate> includeTemplate = FunctionTemplate::New(IncludeScriptWrapper);
